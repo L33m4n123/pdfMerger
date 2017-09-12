@@ -1,5 +1,6 @@
 # Intellij Stuff
 /.idea
+*.iml
 
 # Maven Stuff
 /target
