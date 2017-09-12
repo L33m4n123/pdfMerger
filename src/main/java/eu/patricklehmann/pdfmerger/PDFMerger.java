@@ -86,10 +86,14 @@ public class PDFMerger extends Application {
 
         // Jede einzelne Datei die übergeben wurde an das leere Dokument anhängen
         for (File f : files) {
-            try (PDDocument fil = PDDocument.load(f)) {
+            PDDocument fil = PDDocument.load(f);
+            try {
                 ut.appendDocument(targetDoc, fil);
+
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                fil.close();
             }
         }
 
