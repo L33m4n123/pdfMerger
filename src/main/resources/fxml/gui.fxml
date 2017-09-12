@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111"
+      fx:controller="eu.patricklehmann.pdfmerger.gui.GUIController">
+    <MenuBar VBox.vgrow="NEVER">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Open…" onAction="#handleLoadButtonAction"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" onAction="#handleQuitButtonAction" text="Quit"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" onAction="#handleHelpButtonAction" text="About PDFMerger"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <Button layoutX="310.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleLoadButtonAction"
+                prefHeight="25.0" prefWidth="110.0" text="PDFs Laden" textAlignment="CENTER">
+            <font>
+                <Font name="Courier New" size="14.0"/>
+            </font>
+        </Button>
+        <Button layoutX="310.0" layoutY="67.0" mnemonicParsing="false" onAction="#handleMergeButtonAction"
+                prefHeight="25.0" prefWidth="110.0" text="Mergen" textAlignment="CENTER">
+            <font>
+                <Font name="Courier New" size="14.0"/>
+            </font>
+        </Button>
+        <Button layoutX="310.0" layoutY="102.0" mnemonicParsing="false" onAction="#handleQuitButtonAction"
+                prefHeight="25.0" prefWidth="110.0" text="Exit" textAlignment="CENTER">
+            <font>
+                <Font name="Courier New" size="14.0"/>
+            </font>
+        </Button>
+        <Label layoutX="433.0" layoutY="36.0" text="Titel"/>
+        <TextField fx:id="pdf_title" layoutX="480.0" layoutY="32.0"/>
+        <!--<Label layoutX="432.0" layoutY="72.0" text="Creator" />
+        <Label layoutX="432.0" layoutY="108.0" text="Subject" />
+        <TextField fx:id="pdf_creator" layoutX="480.0" layoutY="67.0" />
+        <TextField fx:id="pdf_subject" layoutX="480.0" layoutY="102.0" />-->
+        <ListView fx:id="files" editable="false" layoutX="14.0" layoutY="20.0" prefHeight="334.0" prefWidth="200.0"/>
+        <Button layoutX="225.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleUpButtonAction" text="↑"
+                textAlignment="CENTER">
+            <font>
+                <Font name="Courier New" size="14.0"/>
+            </font>
+        </Button>
+        <Button layoutX="225.0" layoutY="167.0" mnemonicParsing="false" onAction="#handleDownButtonAction" text="↓"
+                textAlignment="CENTER">
+            <font>
+                <Font name="Courier New" size="14.0"/>
+            </font>
+        </Button>
+        <Button layoutX="225.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="X"
+                textAlignment="CENTER">
+            <font>
+                <Font name="Courier New" size="14.0"/>
+            </font>
+        </Button>
+    </AnchorPane>
+</VBox>
